@@ -30,7 +30,7 @@ public class WebSite {
     public boolean register(String name, String email, String pass, ArrayList<Course> course) {
         Teacher td = new Teacher(name, email, pass, course);
 
-        if (searchRegisteration(name, email) == td) {
+        if (searchRegisteration(name, email) != null) { // change 1
             return false;
 
         }
@@ -44,7 +44,7 @@ public class WebSite {
     public boolean login(String name, String pass) {
         Teacher td = new Teacher(name, pass);
 
-        if(searchlogin(name, pass) == td) {
+        if(searchlogin(name, pass) != null) { // change 2
             return true;
 
         }
