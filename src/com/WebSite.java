@@ -28,14 +28,15 @@ public class WebSite {
     
 
     public boolean register(String name, String email, String pass, ArrayList<Course> course) {
-        Teacher td = new Teacher(name, email, pass, course);
+        
 
         if (searchRegisteration(name, email) !=null) {
             return false;
-
         }
-
+        
+        Teacher td = new Teacher(name, email, pass, course);
         this.getTeach().add(td);
+        
         return true;
 
     }
